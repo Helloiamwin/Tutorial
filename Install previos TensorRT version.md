@@ -45,14 +45,16 @@ builder = trt.Builder(TRT_LOGGER)
 print("TensorRT Builder created successfully!")
 ## Warning
 If facing with libnvinfer_builder_resource.so.8.6.1: cannot enable executable stack as shared object requires: Invalid argument
+
 ==> Use the execstack tool to check if the library requires an executable stack:
+ - execstack -q /path/to/libnvinfer_builder_resource.so.8.6.1
 
-execstack -q /path/to/libnvinfer_builder_resource.so.8.6.1
 Output Interpretation:
+
 X: The library requires an executable stack.
+
 -: The library does not require an executable stack.
+ - sudo execstack -c /path/to/libnvinfer_builder_resource.so.8.6.1
+ - execstack -q /path/to/libnvinfer_builder_resource.so.8.6.1
 
-sudo execstack -c /path/to/libnvinfer_builder_resource.so.8.6.1
-
-execstack -q /path/to/libnvinfer_builder_resource.so.8.6.1
 You should now see a - instead of X.
