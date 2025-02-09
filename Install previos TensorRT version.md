@@ -34,14 +34,19 @@ Dowload previous tensorRt verion in: https://developer.nvidia.com/tensorrt/downl
 print("Hello, world!")
 
 import tensorrt as trt
+
 print("tensort version: ", trt.__version__)
 
 import torch
+
 print("torch is available:" , torch.cuda.is_available(), torch.__version__)
 
 import tensorrt as trt
+
 TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
+
 builder = trt.Builder(TRT_LOGGER)
+
 print("TensorRT Builder created successfully!")
 ## Warning
 If facing with libnvinfer_builder_resource.so.8.6.1: cannot enable executable stack as shared object requires: Invalid argument
